@@ -32,11 +32,12 @@ public class ValuesHome {
 	By TotalBalance_Label = By.id("lbl_ttl_val");
 	By TotalBalance_TextBox = By.id("txt_ttl_val");
 	
+	String commonLabelIds = "lbl_val_";
+	String commonValueIds = "txt_val_";
 	
 	Map<String, String> values = new HashMap<String, String>();
 
 	public int returnLabelCount() {
-		String commonLabelIds = "lbl_val_";
 		String actualLabelId;
 		List<WebElement> labels = new ArrayList<WebElement>();
 		int i = 1;
@@ -49,12 +50,11 @@ public class ValuesHome {
 	}
 
 	public int returnValueCount() {
-		String commonLabelIds = "txt_val_";
 		String actualLabelId;
 		List<WebElement> values = new ArrayList<WebElement>();
 		int i = 1;
 		while (i <= 5) {
-			actualLabelId = commonLabelIds + i;
+			actualLabelId = commonValueIds + i;
 			values.add(driver.findElement(By.id(actualLabelId)));
 			i++;
 		}
@@ -62,12 +62,11 @@ public class ValuesHome {
 	}
 
 	public List<WebElement> valueTextboxes() {
-		String commonLabelIds = "txt_val_";
 		String actualLabelId;
 		List<WebElement> values = new ArrayList<WebElement>();
 		int i = 1;
 		while (i <= 5) {
-			actualLabelId = commonLabelIds + i;
+			actualLabelId = commonValueIds + i;
 			values.add(driver.findElement(By.id(actualLabelId)));
 			i++;
 		}
